@@ -1,3 +1,5 @@
+# Python Application For Various Formula 1 Analysis
+
 * To run the project you must install the FastF1 python library *
 * In the terminal, simply run "pip install fastf1 *
 * After this run the program normally through main.py *
