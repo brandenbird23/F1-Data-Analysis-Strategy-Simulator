@@ -124,12 +124,13 @@ class RaceStrategySimulator:
             compound_upper = compound.upper()
             if compound_upper in driver_averages:
                 base_lap_time = driver_averages[compound_upper]
-                compound_factor = self.compound_performance_factor[compound_upper]
+                #compound_factor = self.compound_performance_factor[compound_upper]
 
                 for _ in range(laps):
                     # Introduce deviation up to +/- 0.05% of the base lap time
                     deviation = np.random.uniform(-0.005, 0.005) * base_lap_time
-                    lap_time_with_deviation = base_lap_time * compound_factor + deviation
+                    lap_time_with_deviation = base_lap_time + deviation
+                                               #* compound_factor) 
                     simulated_times.append(pd.Timedelta(seconds=lap_time_with_deviation))
             else:
                 print(f"No average lap time found for compound '{compound_upper}'. Using default value.")
